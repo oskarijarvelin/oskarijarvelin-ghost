@@ -1,0 +1,37 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.article-list {
+    @include wrapper;
+    overflow: hidden;
+}
+
+.article-list__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -16px -32px 0;
+
+    @include minwidth($laptop) {
+        margin: 0 -32px -32px 0;
+    }
+
+    article {
+        flex: 0 0 calc(100% - 16px);
+        margin: 0 16px 32px 0;
+        max-width: calc(100% - 16px);
+        width: calc(100% - 16px);
+
+        @include minwidth($mobile) {
+            flex: 0 0 calc(50% - 16px);
+            max-width: calc(50% - 16px);
+            width: calc(50% - 16px);
+        }
+
+        @include minwidth($laptop) {
+            flex: 0 0 calc(33.33% - 32px);
+            margin: 0 32px 32px 0;
+            max-width: calc(33.33% - 32px);
+            width: calc(33.33% - 32px);
+        }
+    }
+}

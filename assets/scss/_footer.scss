@@ -1,0 +1,73 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.footer {
+    background-color: $color--accent;
+    color: #fff;
+    padding: 40px 0 100px;
+
+    @include minwidth($tablet) {
+        padding: 16px 0;
+    }
+}
+
+.footer__wrapper {
+    @include wrapper;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+
+    @include minwidth($tablet) {
+        flex-direction: row;
+    }
+}
+
+.footer__copyright {
+    padding-top: 32px;
+
+    @include minwidth($tablet) {
+        padding-top: 0;
+    }
+
+    a {
+        color: #fff;
+    }
+}
+
+.footer__nav {
+    .nav {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+
+        @include minwidth($mobile) {
+            flex-direction: row;
+        }
+
+        li {
+            margin-bottom: 24px;
+            text-align: center;
+
+            @include minwidth($mobile) {
+                margin-bottom: 0;
+                margin-left: 32px;
+                text-align: unset;
+            }
+
+            @include minwidth($tablet) {
+                margin-left: 32px;
+            }
+
+            a {
+                color: #fff;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+        }
+    }
+}

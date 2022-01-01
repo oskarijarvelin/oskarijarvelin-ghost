@@ -1654,15 +1654,17 @@ iframe.instagram-media + script + :not([id]) {
     text-decoration: none;
 }
 
-.site-footer .sponsored {
+.site-footer .site-footer-nav .nav {
     display: flex;
     align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-.site-footer .sponsored svg {
-    max-height: 15px;
-    width: auto;
-    margin: 0 0 3px 10px;
+.site-footer .site-footer-nav .nav li {
+    margin: 0 0 0 4rem;
+    padding: 0;
 }
 
 @media (max-width: 800px) {
@@ -1685,8 +1687,13 @@ iframe.instagram-media + script + :not([id]) {
         font-size: 1.5rem;
     }
 
-    .site-footer .sponsored {
-        justify-content: center;
+    .site-footer .site-footer-nav .nav {
+        flex-direction: column;
+        margin: 0 0 4rem;
+    }
+
+    .site-footer .site-footer-nav .nav li {
+        margin: 0 0 2rem;
     }
 }
 

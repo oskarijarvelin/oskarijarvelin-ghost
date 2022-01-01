@@ -1,0 +1,23 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.page__header {
+    align-items: center;
+    display: flex;
+    height: 50vw;
+    max-height: 40vh;
+    min-height: 300px;
+    justify-content: center;
+    padding: 0 32px;
+    position: relative;
+}
+
+.page__header-img {
+    height: 100%;
+    left: -2px;
+    max-width: calc(100% + 2px);
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: calc(100% + 2px);
+}

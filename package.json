@@ -2,7 +2,7 @@
     "name": "oskarijarvelin",
     "description": "Ghost theme for oskarijarvelin.fi",
     "demo": "https://oskarijarvelin.fi",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "engines": {
         "ghost": ">=4.0.0",
         "ghost-api": "v4"
@@ -54,13 +54,15 @@
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "9.0.0",
+        "gulp-sass": "^5.1.0",
         "gulp-uglify": "3.0.2",
         "gulp-zip": "5.1.0",
         "inquirer": "8.0.0",
         "postcss": "^8.4.5",
         "postcss-color-mod-function": "3.0.3",
         "postcss-easy-import": "3.0.0",
-        "pump": "3.0.0"
+        "pump": "3.0.0",
+        "sass": "^1.45.2"
     },
     "browserslist": [
         "defaults"
@@ -94,66 +96,9 @@
                 "default": "Title (H1)",
                 "group": "homepage"
             },
-            "publication_cover_style": {
-                "type": "select",
-                "options": [
-                    "None",
-                    "Medium",
-                    "Large"
-                ],
-                "default": "Medium",
-                "group": "homepage"
-            },
-            "feed_layout": {
-                "type": "select",
-                "options": [
-                    "Dynamic grid",
-                    "Simple grid",
-                    "List"
-                ],
-                "default": "Dynamic grid",
-                "group": "homepage"
-            },
-            "spotify": {
+            "github": {
                 "type": "text",
-                "default": "Spotify-url"
-            },
-            "youtube": {
-                "type": "text",
-                "default": "YouTube-url"
-            },
-            "instagram": {
-                "type": "text",
-                "default": "Instagram-url"
-            },
-            "color_scheme": {
-                "type": "select",
-                "options": [
-                    "Light",
-                    "Dark",
-                    "Auto"
-                ],
-                "default": "Light"
-            },
-            "post_image_width": {
-                "type": "select",
-                "options": [
-                    "Wide",
-                    "Full",
-                    "Small"
-                ],
-                "default": "Wide",
-                "group": "post"
-            },
-            "email_signup_for_logged_out_visitors": {
-                "type": "select",
-                "options": [
-                    "Footer",
-                    "Bottom of post",
-                    "None"
-                ],
-                "default": "Footer",
-                "group": "post"
+                "default": "Github-url"
             },
             "email_signup_text": {
                 "type": "text",
@@ -174,6 +119,11 @@
                 "type": "boolean",
                 "default": true,
                 "group": "post"
+            },
+            "recent_posts_title": {
+                "type": "text",
+                "default": "Lue lisää -teksti",
+                "group": "post"
             }
         }
     },
@@ -181,5 +131,8 @@
         "extends": [
             "@tryghost:theme"
         ]
+    },
+    "dependencies": {
+        "sanitize.css": "^13.0.0"
     }
 }

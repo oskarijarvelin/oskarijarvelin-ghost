@@ -1,0 +1,43 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto Condensed';
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 1.33;
+
+    @include minwidth($tablet) {
+        font-size: 48px;
+    }
+
+    @include minwidth($laptop) {
+        font-size: 56px;
+    }
+}
+
+body {
+    background-color: $color--bg;
+    color: $color--body;
+    font-size: 16px;
+
+    @include minwidth($tablet) {
+        font-size: 18px;
+    }
+    
+    &.locked {
+        overflow: hidden;
+    }
+}
+
+.main {
+    min-height: 100vh;
+    padding-top: 64px;
+}

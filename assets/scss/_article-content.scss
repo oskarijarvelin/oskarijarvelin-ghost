@@ -1,0 +1,103 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.article__title {
+    @include wrapper(800);
+    margin-top: 32px;
+    margin-bottom: 16px;
+
+    @include minwidth($laptop) {
+        margin-top: 64px;
+        margin-bottom: 32px;
+    }
+}
+
+.article__content {
+    & > * {
+        @include wrapper(800);
+    }
+
+    a {
+        color: $color--accent;
+        font-weight: 700;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    blockquote {
+        color: #666;
+        padding: 8px 48px;
+        position: relative;
+
+        &:before {
+            position: absolute;
+            content: '';
+            left: 16px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: #999;
+
+            @include minwidth($laptop) {
+                left: 0px;
+            }
+        }
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid #CCC;
+        margin-bottom: 48px;
+        margin-top: 48px;
+        max-width: calc(100% - 100px);
+        width: 600px;
+
+        @include minwidth($laptop) {
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+    }
+
+    ul, ol {
+        margin-top: 32px;
+        margin-bottom: 32px;
+        padding-left: 40px;
+
+        @include minwidth($tablet) {
+            padding-left: 64px;
+        }
+    }
+
+    li {
+        margin: 12px 0;
+    }
+
+    .kg-card {
+        margin-top: 24px;
+        margin-bottom: 24px;
+
+        @include minwidth($tablet) {
+            margin-top: 48px;
+            margin-bottom: 48px;
+        }
+    }
+
+    .kg-width-wide {
+        max-width: 1280px;
+    }
+
+    .kg-width-full {
+        max-width: 100%;
+        padding: 0;
+        margin-top: 40px;
+        margin-bottom: 40px;
+
+        @include minwidth($tablet) {
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+    }
+}

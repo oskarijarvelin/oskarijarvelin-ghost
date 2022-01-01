@@ -1,0 +1,52 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.post-card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.post-card__image {
+    box-shadow: 0 8px 16px rgba(0,0,0,.16);
+    display: flex;
+    flex: 0 0 100%;
+    transition: box-shadow .16s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,.16);
+    }
+}
+
+.post-card__content {
+    flex: 0 0 100%;
+    padding: 24px 0 0;
+
+    a {
+        color: $color--body;
+        text-decoration: none;
+    }
+}
+
+.post-card__title {
+    font-size: 22px;
+    line-height: 1.33;
+    margin: 0 0 12px;
+
+    a {
+        color: $color--body;
+        text-decoration: none;
+    }
+}
+
+.post-card__excerpt {
+    font-size: 16px;
+}
+
+.post-card__footer {
+    align-self: flex-end;
+    color: #666;
+    flex: 0 0 100%;
+    font-family: 'Roboto Condensed';
+    font-size: 14px;
+    margin: 16px 0 0;
+}
