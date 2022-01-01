@@ -1,0 +1,104 @@
+{{!< default}}
+
+{{!-- The tag above means: insert everything in this file
+into the {body} tag of the default.hbs template --}}
+
+
+{{#post}}
+{{!-- Everything inside the #post block pulls data from the post --}}
+
+<main id="site-main" class="site-main">
+    <article class="article {{post_class}} {{#match @custom.post_image_width "Full"}}image-full{{else match @custom.post_image_width "=" "Small"}}image-small{{/match}}">
+
+        <header class="article-header gh-canvas">
+
+            <h1 class="article-title">{{title}}</h1>
+
+            {{#if custom_excerpt}}
+            <p class="article-excerpt">{{custom_excerpt}}</p>
+            {{/if}}
+
+            <div class="article-byline">
+                <section class="article-byline-content">
+                    <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD.MM.YYYY"}}</time>
+                </section>
+            </div>
+
+            {{#if feature_image}}
+            <figure class="article-image">
+                {{!-- This is a responsive image, it loads different sizes depending on device
+                https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+                <img
+                    width="1200"
+                    height="675"
+                    srcset="{{img_url feature_image size="s"}} 300w,
+                            {{img_url feature_image size="m"}} 600w,
+                            {{img_url feature_image size="l"}} 1200w,
+                            {{img_url feature_image size="xl"}} 1920w"
+                    sizes="(min-width: 1280px) calc(100vw - 8vmin), 1200px"
+                    src="{{img_url feature_image size="xl"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                />
+                {{#if feature_image_caption}}
+                    <figcaption>{{feature_image_caption}}</figcaption>
+                {{/if}}
+            </figure>
+            {{/if}}
+        </header>
+
+        <section class="gh-content gh-canvas">
+            {{content}}
+        </section>
+
+        {{!--
+        <section class="article-comments gh-canvas">
+            If you want to embed comments, this is a good place to paste your code!
+        </section>
+        --}}
+
+    </article>
+</main>
+
+
+{{!-- Read more links, just above the footer --}}
+{{#if @custom.show_recent_posts}}
+<aside class="read-more-wrap">
+    <h2 class="read-more-title">Lisää kiinnostavia jaksoja:</h2>
+    <div class="read-more inner">
+
+        {{!-- The {#get} helper below fetches some of the latest posts here
+        so that people have something else to read when they finish this one.
+
+        This query gets the latest 3 posts on the site, but adds a filter to
+        exclude the post we're currently on from being included. --}}
+
+        {{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
+            {{#if more_posts}}
+                {{#foreach more_posts}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            {{/if}}
+        {{/get}}
+
+    </div>
+</aside>
+{{/if}}
+
+{{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
+{{#match @custom.email_signup_for_logged_out_visitors "!=" "None"}}
+{{#unless @member}}{{#if access}}
+    <section class="footer-cta {{#match @custom.email_signup_for_logged_out_visitors "Bottom of post"}}cta-alt{{/match}}">
+        <div class="inner">
+            {{#if @custom.email_signup_text}}<h2>{{@custom.email_signup_text}}</h2>{{/if}}
+            <a class="footer-cta-button" href="#/portal" data-portal>
+                <div class="footer-cta-input">{{@custom.email_signup_placeholder}}</div>
+                <span>{{@custom.email_signup_button}}</span>
+            </a>
+            {{!-- ^ This looks like a form element, but it's just a link to Portal,
+            making the form validation and submission much simpler. --}}
+        </div>
+    </section>
+{{/if}}{{/unless}}
+{{/match}}
+
+{{/post}}
