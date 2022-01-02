@@ -1,0 +1,81 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.tag {
+    margin: 32px 0 80px;
+}
+
+.tag__header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 50vw;
+    max-height: 40vh;
+    min-height: 400px;
+    justify-content: center;
+    padding: 0;
+    position: relative;
+
+    @include minwidth($tablet) {
+        min-height: 300px;
+    }
+}
+
+.tag__header--has-cover {
+    &:after {
+        background-image: linear-gradient(90deg, rgba(0,0,0,.75), rgba(0,0,0,.15));
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .tag__header-content {
+        color: $color--white;
+    }
+    
+}
+
+.tag__header-img {
+    height: 100%;
+    left: -2px;
+    max-width: calc(100% + 2px);
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: calc(100% + 2px);
+}
+
+.tag__header-content {
+    width: 100%;
+    max-width: 1280px;
+    color: $color--body;
+    padding: 0 60px 0 16px;
+    position: relative;
+    z-index: 1;
+
+    @include minwidth($tablet) {
+        padding: 0 120px 0 32px;
+    }
+}
+
+.tag__header-title {
+    margin: 0;
+}
+
+.tag__excerpt {
+    font-size: 20px;
+    margin: 0 0 16px;
+
+    @include minwidth($tablet) {
+        font-size: 22px;
+    }
+}
+
+.tag__meta {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 16px 0 32px;
+}

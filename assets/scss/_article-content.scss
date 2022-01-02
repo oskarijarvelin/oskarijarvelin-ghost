@@ -28,7 +28,7 @@
     }
 
     blockquote {
-        color: #666;
+        color: $color--muted;
         padding: 8px 48px;
         position: relative;
 
@@ -39,7 +39,7 @@
             top: 0;
             height: 100%;
             width: 2px;
-            background-color: #999;
+            background-color: rgba($color--muted, .2);
 
             @include minwidth($laptop) {
                 left: 0px;
@@ -49,7 +49,7 @@
 
     hr {
         border: 0;
-        border-top: 1px solid #CCC;
+        border-top: 1px solid rgba($color--muted, .2);
         margin-bottom: 48px;
         margin-top: 48px;
         max-width: calc(100% - 100px);
@@ -85,6 +85,20 @@
         }
     }
 
+    .kg-image-card {
+        margin-top: 16px;
+        margin-bottom: 16px;
+
+        @include minwidth($tablet) {
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+
+        img {
+            box-shadow: 0 4px 8px rgba(0,0,0,.16);
+        }
+    }
+
     .kg-width-wide {
         max-width: 1280px;
     }
@@ -98,6 +112,206 @@
         @include minwidth($tablet) {
             margin-top: 80px;
             margin-bottom: 80px;
+        }
+    }
+
+    figcaption {
+        color: #666;
+        font-size: 16px;
+        padding: 8px 0 0;
+        text-align: center;
+    }
+
+    .kg-embed-card {
+        height: 0;
+        padding-top: calc(56.25% - 18px);
+        position: relative;
+
+        @include minwidth($tablet) {
+            padding-top: calc(56.25% - 36px);
+        }
+
+        @include minwidth(800) {
+            padding-top: 414px;
+        }
+
+        iframe {
+            box-shadow: 0 4px 8px rgba(0,0,0,.16);
+            height: 100%;
+            left: 16px;
+            position: absolute;
+            top: 0;
+            width: calc(100% - 32px);
+
+            @include minwidth($tablet) {
+                left: 32px;
+                width: calc(100% - 64px);
+            }
+        }
+    }
+
+    .kg-bookmark-card {
+        border: 1px solid $color--border;
+        border-radius: 4px;
+        margin: 0 16px;
+        max-width: 768px;
+        padding: 0;
+
+        @include minwidth($tablet) {
+            margin: 0 32px;
+            max-width: 736px;
+        }
+
+        @include minwidth(800) {
+            margin: 0 auto;
+        }
+
+        .kg-bookmark-container {
+            display: flex;
+            flex-direction: column-reverse;
+            flex-wrap: wrap;
+
+            @include minwidth($tablet) {
+                flex-direction: row;
+            }
+        }
+
+        .kg-bookmark-content {
+            border-top: 1px solid $color--border;
+            background-color: $color--white;
+            display: flex;
+            flex: 0 0 100%;
+            flex-wrap: wrap;
+            padding: 16px;
+
+            @include minwidth($tablet) {
+                border-right: 1px solid $color--border;
+                border-top: 0;
+                flex: 0 0 60%;
+                padding: 16px 24px;
+            }
+        }
+
+        .kg-bookmark-thumbnail {
+            flex: 0 0 40%;
+
+            img {
+                border-radius: 4px 4px 0 0;
+
+                @include minwidth($tablet) {
+                    border-radius: 0 4px 4px 0;
+                }
+            }
+        }
+
+        .kg-bookmark-title {
+            color: $color--body;
+            flex: 0 0 100%;
+            font-family: 'Roboto Condensed';
+            font-weight: 700;
+            margin: 0 0 8px;
+        }
+
+        .kg-bookmark-description {
+            color: $color--muted;
+            flex: 0 0 100%;
+            font-size: 14px;
+            font-weight: 400;
+
+            @include minwidth($tablet) {
+                font-size: 16px;
+            }
+        }
+
+        .kg-bookmark-metadata {
+            align-items: center;
+            align-self: flex-end;
+            display: flex;
+            flex: 0 0 100%;
+            font-size: 16px;
+            margin: 8px 0 0;
+        }
+
+        .kg-bookmark-icon {
+            height: auto;
+            margin-right: 8px;
+            max-width: 16px;
+        }
+
+        .kg-bookmark-author {
+            color: $color--body;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+
+    .kg-gallery-card {
+        margin-top: 16px;
+        margin-bottom: 16px;
+
+        @include minwidth($tablet) {
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+        
+        .kg-gallery-row {
+            display: flex;
+            gap: 16px;
+
+            @include minwidth($tablet) {
+                gap: 32px;
+            }
+        }
+
+        .kg-gallery-image {
+            flex-grow: 1;
+
+            img {
+                box-shadow: 0 4px 8px rgba(0,0,0,.16);
+                height: 100%;
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+    }
+
+    .kg-code-card {
+        background-color: $color--white;
+        border: 1px solid $color--border;
+        margin: 0 16px;
+        max-width: 768px;
+        padding: 0;
+
+        @include minwidth($tablet) {
+            margin: 0 32px;
+            max-width: 736px;
+        }
+
+        @include minwidth(800) {
+            margin: 0 auto;
+        }
+
+        pre {
+            color: $color--muted;
+            font-size: 16px;
+            padding: 0 16px;
+
+            @include minwidth($tablet) {
+                padding: 0 32px;
+            }
+        }
+
+        figcaption {
+            border-top: 1px solid $color--border;
+            padding: 8px 16px;
+        }
+    }
+
+    .zapier-templates-widget {
+        margin: 24px auto;
+
+        @include minwidth($tablet) {
+            margin: 48px auto;
         }
     }
 }

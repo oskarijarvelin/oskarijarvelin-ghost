@@ -14,18 +14,49 @@
 
 .post__excerpt {
     @include wrapper(800);
-    color: #666;
-    font-size: 22px;
+    color: $color--muted;
+    font-size: 20px;
     margin-bottom: 16px;
+
+    @include minwidth($tablet) {
+        font-size: 22px;
+    }
 }
 
 .post__meta {
     @include wrapper(800);
-    color: #666;
+    color: $color--muted;
+    font-family: 'Roboto Condensed';
 }
 
-.post__meta-date {
-    font-family: 'Roboto Condensed';
+.post__meta-tag {
+    color: $color--muted;
+    margin-left: 16px;
+    position: relative;
+    text-decoration: none;
+
+    @include minwidth($tablet) {
+        margin-left: 32px;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:before {
+        background-color: $color--muted;
+        border-radius: 50%;
+        content: '';
+        height: 4px;
+        left: -11px;
+        position: absolute;
+        top: calc(50% - 2px);
+        width: 4px;
+
+        @include minwidth($tablet) {
+            left: -18px;
+        }
+    }
 }
 
 .post__img {
@@ -37,8 +68,54 @@
         margin-top: 64px;
         margin-bottom: 64px;
     }
+
+    img {
+        box-shadow: 0 8px 16px rgba(0,0,0,.16);
+    }
 }
 
+
+
+// CONTENT CTA
+.content-cta {
+    position: relative;
+}
+
+.content-cta__fade {
+    position: absolute;
+    top: -120px;
+    width: 100%;
+    height: 120px;
+    background-image: linear-gradient(180deg, rgba($color--bg, 0) 0%, rgba($color--bg, 1) 75%, rgba($color--bg, 1) 100%);
+}
+
+.content-cta__title {
+    color: $color--accent;
+    text-align: center;
+}
+
+.content-cta__login {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    small a {
+        font-family: 'Roboto Condensed';
+    }
+}
+
+.content-cta__btn {
+    background-color: $color--accent;
+    border-radius: 24px;
+    color: $color--white !important;
+    font-family: 'Roboto Condensed';
+    margin-right: 16px;
+    padding: 8px 24px;
+}
+
+
+
+// READ MORE
 .read-more {
     margin: 100px 0;
 
@@ -57,4 +134,78 @@
     @include minwidth($laptop) {
         margin-bottom: 32px;
     }
+}
+
+
+
+// CTA
+.cta {
+    align-items: center;
+    display: flex;
+    height: 50vw;
+    max-height: 40vh;
+    min-height: 300px;
+    justify-content: center;
+    padding: 0 32px;
+    position: relative;
+
+    &:after {
+        background-image: linear-gradient(135deg, rgba(0,0,0,.5), rgba(0,0,0,.1));
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
+.cta__img {
+    height: 100%;
+    left: -2px;
+    max-width: calc(100% + 2px);
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: calc(100% + 2px);
+}
+
+.cta__wrapper {
+    @include wrapper;
+    color: $color--white;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
+
+.cta__title {
+    margin: 0 0 32px;
+}
+
+.cta__link {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.cta__input {
+    background-color: $color--bg;
+    border: 1px solid $color--border;
+    border-radius: 4px 0 0 4px;
+    color: $color--muted;
+    max-width: 600px;
+    padding: 8px 16px;
+    text-align: left;
+    width: calc(100% - 100px);
+}
+
+.cta__button {
+    background-color: $color--accent;
+    border: 1px solid $color--accent;
+    border-radius: 0 4px 4px 0;
+    color: $color--white;
+    font-family: 'Roboto Condensed';
+    padding: 8px 24px;
 }

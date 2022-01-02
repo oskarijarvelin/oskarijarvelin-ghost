@@ -1,0 +1,9 @@
+<nav class="pagination">
+    {{#if prev}}
+        <a class="pagination__newer" href="{{page_url prev}}"><span aria-hidden="true">&larr;</span> Uudemmat</a>
+    {{/if}}
+    <span class="pagination__number">Sivu {{page}} / {{pages}}</span>
+    {{#if next}}
+        <a class="pagination__older" href="{{page_url next}}">Vanhemmat <span aria-hidden="true">&rarr;</span></a>
+    {{/if}}
+</nav>

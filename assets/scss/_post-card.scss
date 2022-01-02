@@ -44,9 +44,32 @@
 
 .post-card__footer {
     align-self: flex-end;
-    color: #666;
+    color: $color--muted;
     flex: 0 0 100%;
+    flex-wrap: wrap;
     font-family: 'Roboto Condensed';
     font-size: 14px;
     margin: 16px 0 0;
+
+    a {
+        color: $color--muted;
+        margin-left: 16px;
+        position: relative;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &:before {
+            background-color: $color--muted;
+            border-radius: 50%;
+            content: '';
+            height: 4px;
+            left: -11px;
+            position: absolute;
+            top: calc(50% - 2px);
+            width: 4px;
+        }
+    }
 }

@@ -35,6 +35,11 @@ which templates loop over to generate a list of posts. --}}
         
     <footer class="post-card__footer">
         <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD.MM.YYYY"}}</time>
+        {{#if primary_tag}}
+            {{#primary_tag}}
+                <a href="{{url}}"{{#if accent_color}} style="color:{{accent_color}};"{{/if}}>{{name}}</a>
+            {{/primary_tag}}
+        {{/if}}
     </footer>
 
 </article>

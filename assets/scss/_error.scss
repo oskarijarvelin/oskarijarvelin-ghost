@@ -1,0 +1,33 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.error {
+    margin: 32px 0 80px;
+}
+
+.error__wrapper {
+    @include wrapper;
+}
+
+.error__code {
+    font-size: 80px;
+    margin: 80px 0 24px;
+    text-align: center;
+}
+
+.error__description {
+    color: $color--muted;
+    font-family: 'Roboto Condensed';
+    margin: 0 0 160px;
+    text-align: center;
+}
+
+.error__link {
+    color: $color--accent;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

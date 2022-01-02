@@ -1,74 +1,58 @@
-{{!--
-
-There are two error files in this theme, one for 404s and one for all other errors.
-This file is the latter, and handle all 400/500 errors that might occur.
-
-Because 500 errors in particular usuall happen when a server is struggling, this
-template is as simple as possible. No template dependencies, no JS, no API calls.
-This is to prevent rendering the error-page itself compounding the issue causing
-the error in the first place.
-
-Keep this template as lightweight as you can!
-
---}}
-
 <!DOCTYPE html>
-<html>
+<html lang="{{@site.locale}}">
 <head>
+    <title>{{meta_title}}</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>{{meta_title}}</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset "built/style.min.css"}}" />
 </head>
-<body>
-    <div class="site-wrapper">
+<body id="body">
 
-        <header class="site-header no-image">
-            <div class="site-nav-main outer">
-                <div class="inner">
-                    <nav class="site-nav-center">
-                        {{#if @site.logo}}
-                        <a class="site-nav-logo" href="{{@site.url}}"><img src="{{img_url @site.logo size="xs"}}"
-                                alt="{{@site.title}}" /></a>
-                        {{else}}
-                        <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
-                        {{/if}}
-                    </nav>
-                </div>
+    <header id="header" class="header">
+        <div class="header__wrapper">
+            <div class="header__logo">
+                <a href="{{@site.url}}">{{@site.title}}</a>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <main class="outer error-content">
-            <div class="inner">
+    <main id="main" class="main">
+        <section class="error">
+            <div class="error__wrapper">
 
-                <section class="error-message">
-                    <h1 class="error-code">{{statusCode}}</h1>
-                    <p class="error-description">{{message}}</p>
-                    <a class="error-link" href="{{@site.url}}">&larr; Takaisin etusivulle</a>
-                </section>
+                <a class="error__link" href="{{@site.url}}">&larr; Takaisin etusivulle</a>
+                <h1 class="error__code">{{statusCode}}</h1>
+                <p class="error__description">{{message}}</p>
 
                 {{#if errorDetails}}
-                <section class="error-stack">
-                    <h3>Teeman virheet:</h3>
-                    <ul class="error-stack-list">
+                    <h2>Teeman virheet:</h2>
+                    <ul class="error__list">
                         {{#foreach errorDetails}}
                             <li>
-                                <em class="error-stack-function">{{{rule}}}</em>
+                                <em class="error__description">{{{rule}}}</em>
 
                                 {{#foreach failures}}
-                                    <p><span class="error-stack-file">Ref: {{ref}}</span></p>
-                                    <p><span class="error-stack-file">Message: {{message}}</span></p>
+                                    <p><span class="error__item">Ref: {{ref}}</span></p>
+                                    <p><span class="error__item">Message: {{message}}</span></p>
                                 {{/foreach}}
                             </li>
                         {{/foreach}}
                     </ul>
-                </section>
                 {{/if}}
 
             </div>
-        </main>
-    </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="footer__wrapper">
+            <div class="footer__copyright">&copy; {{date format="YYYY"}}: <a href="{{@site.url}}">{{@site.title}}</a></div>
+        </div>
+    </footer>
 </body>
 </html>

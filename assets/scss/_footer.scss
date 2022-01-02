@@ -3,7 +3,8 @@
 
 .footer {
     background-color: $color--accent;
-    color: #fff;
+    color: $color--white;
+    font-size: 16px;
     padding: 40px 0 100px;
 
     @include minwidth($tablet) {
@@ -31,7 +32,7 @@
     }
 
     a {
-        color: #fff;
+        color: $color--white;
     }
 }
 
@@ -60,7 +61,7 @@
             }
 
             a {
-                color: #fff;
+                color: $color--white;
                 text-decoration: none;
 
                 &:hover {
