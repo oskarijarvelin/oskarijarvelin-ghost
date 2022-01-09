@@ -1,0 +1,12 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.kg-card {
+    margin-top: 24px;
+    margin-bottom: 24px;
+
+    @include minwidth($tablet) {
+        margin-top: 48px;
+        margin-bottom: 48px;
+    }
+}

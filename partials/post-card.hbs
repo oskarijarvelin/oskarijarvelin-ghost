@@ -27,19 +27,22 @@ which templates loop over to generate a list of posts. --}}
     <div class="post-card__content">
 
         <h2 class="post-card__title"><a href="{{url}}">{{title}}</a></h2>
+
+        <div class="post-card__meta">
+            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD.MM.YYYY"}}</time>
+            {{#if primary_tag}}
+                {{#primary_tag}}
+                    <a href="{{url}}"{{#if accent_color}} style="color:{{accent_color}};"{{/if}}>{{name}}</a>
+                {{/primary_tag}}
+            {{/if}}
+        </div>
+
         <div class="post-card__excerpt">
             <a href="{{url}}">{{excerpt}}</a>
         </div>
 
     </div>
         
-    <footer class="post-card__footer">
-        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD.MM.YYYY"}}</time>
-        {{#if primary_tag}}
-            {{#primary_tag}}
-                <a href="{{url}}"{{#if accent_color}} style="color:{{accent_color}};"{{/if}}>{{name}}</a>
-            {{/primary_tag}}
-        {{/if}}
-    </footer>
+    
 
 </article>

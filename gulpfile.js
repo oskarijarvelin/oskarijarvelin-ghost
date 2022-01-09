@@ -64,11 +64,10 @@ function css(done) {
 function js(done) {
     pump([
         src([
-            // pull in lib files first so our own code can depend on it
-            'assets/js/lib/*.js',
+            'assets/js/**/*.js',
             'assets/js/*.js'
         ], {sourcemaps: true}),
-        concat('casper.js'),
+        concat('theme.min.js'),
         uglify(),
         dest('assets/built/', {sourcemaps: '.'}),
         livereload()
@@ -93,8 +92,9 @@ function zipper(done) {
 }
 
 const cssWatcher = () => watch('assets/scss/**', css);
+const jsWatcher = () => watch(['assets/js/**'], js);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs', 'members/**/*.hbs'], hbs);
-const watcher = parallel(cssWatcher, hbsWatcher);
+const watcher = parallel(cssWatcher, hbsWatcher, jsWatcher);
 const build = series(css, js);
 
 exports.build = build;
