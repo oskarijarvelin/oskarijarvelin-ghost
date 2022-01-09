@@ -8,7 +8,7 @@
     position: fixed;
     top: 0;
     width: 100vw;
-    z-index: 99;
+    z-index: 9999;
 }
 
 .header.mobile-open {
@@ -188,6 +188,7 @@
     display: none;
 
     @include minwidth($laptop) {
+        align-items: center;
         display: flex;
     }
 }
@@ -195,4 +196,14 @@
 .header__action {
     margin-left: 40px;
     padding-bottom: 4px;
+
+    &.gh-portal-close {
+        background-color: $color--bg;
+        border-radius: 16px;
+        color: $color--accent;
+        font-family: 'Roboto Condensed';
+        font-weight: 700;
+        padding: 0.5rem 1.25rem 0.3rem;
+        text-decoration: none;
+    }
 }

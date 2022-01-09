@@ -1,0 +1,127 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.kg-header-card {
+    align-items: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,.16);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    * {
+        @include wrapper;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 32px;
+        line-height: 1.33;
+        margin: 0;
+
+        @include minwidth($tablet) {
+            font-size: 48px;
+        }
+
+        @include minwidth($laptop) {
+            font-size: 56px;
+        }
+    }
+
+    h3 {
+        font-size: 24px;
+        line-height: 1.33;
+        margin: 2rem 0;
+
+        @include minwidth($tablet) {
+            font-size: 26px;
+        }
+
+        @include minwidth($laptop) {
+            font-size: 30px;
+        }
+    }
+
+    &.kg-size-large {
+        min-height: 100vh;
+    }
+
+    &.kg-size-medium {
+        min-height: 50vh;
+    }
+
+    &.kg-size-small {
+        height: 33vh;
+        min-height: 300px;
+
+        h3 {
+            margin: 1rem 0 0;
+        }
+
+        .kg-header-card-button {
+            margin: 3rem 0 0;
+        }
+    }
+
+    &.kg-style-dark {
+        background-color: $color--body;
+        color: $color--bg;
+    }
+
+    &.kg-style-light {
+        background-color: $color--white;
+        box-shadow: 0 4px 12px rgba(0,0,0,.02);
+    }
+
+    &.kg-style-accent {
+        background-color: $color--accent;
+        color: $color--bg;
+
+        .kg-header-card-button {
+            background-color: $color--bg;
+            color: $color--body;
+        }
+    }
+
+    &.kg-style-image {
+        background-size: cover;
+        background-position: center;
+        color: $color--white;
+        position: relative;
+
+        &:after {
+            background-image: linear-gradient(135deg, rgba(0,0,0,.5), rgba(0,0,0,.2));
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        * {
+            position: relative;
+            z-index: 1;
+        }
+
+        h2, 
+        h3 {
+            text-shadow: 2px 4px 4px rgba(0,0,0,.6);
+        }
+    }
+
+    .kg-header-card-button {
+        background-color: $color--accent;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0,0,0,.16);
+        color: $color--white;
+        font-family: 'Roboto Condensed';
+        font-weight: 700;
+        line-height: 1;
+        margin: 4rem 0 0;
+        padding: 8px 16px;
+
+        @include minwidth($tablet) {
+            padding: 12px 32px;
+        }
+    }
+}

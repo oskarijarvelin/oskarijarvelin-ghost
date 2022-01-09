@@ -1,0 +1,86 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.kg-nft-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    * {
+        position: static;
+    }
+}
+
+.kg-nft-card-container {
+    background: $color--white;;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px -2px rgb(0 0 0 / 10%), 0 0 1px rgb(0 0 0 / 40%);
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    max-width: 512px;
+    position: static;
+    text-decoration: none;
+    transition: none;
+    width: 100%;
+}
+
+.kg-nft-metadata {
+    padding: 20px;
+    width: 100%;
+}
+
+.kg-nft-image {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+}
+
+.kg-nft-header {
+    align-items: flex-start;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.kg-nft-title {
+    color: $color--body;
+    font-family: inherit;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.3em;
+    margin: 0;
+    max-width: unset;
+    min-width: unset;
+}
+
+.kg-nft-opensea-logo {
+    margin-top: 2px;
+    object-fit: scale-down;
+    width: 100px;
+}
+
+.kg-nft-creator {
+    color: $color--muted;
+    font-family: inherit;
+    line-height: 1.4em;
+    margin: 4px 0 0;
+
+    span {
+        color: $color--body;
+        font-weight: 500;
+    }
+}
+
+.kg-nft-description {
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.4em;
+    margin: 20px 0 0;
+}

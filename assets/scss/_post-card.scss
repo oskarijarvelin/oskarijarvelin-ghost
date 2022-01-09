@@ -88,4 +88,22 @@
             width: 4px;
         }
     }
+
+    span {
+        color: $color--muted;
+        margin-left: 16px;
+        position: relative;
+        text-decoration: none;
+
+        &:before {
+            background-color: $color--muted;
+            border-radius: 50%;
+            content: '';
+            height: 4px;
+            left: -11px;
+            position: absolute;
+            top: calc(50% - 2px);
+            width: 4px;
+        }
+    }
 }

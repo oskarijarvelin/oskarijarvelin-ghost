@@ -35,6 +35,7 @@ which templates loop over to generate a list of posts. --}}
                     <a href="{{url}}"{{#if accent_color}} style="color:{{accent_color}};"{{/if}}>{{name}}</a>
                 {{/primary_tag}}
             {{/if}}
+            <span>{{reading_time seconds=(t "Alle minuutti") minute=(t "1 min") minutes=(t "% min")}}</span>
         </div>
 
         <div class="post-card__excerpt">

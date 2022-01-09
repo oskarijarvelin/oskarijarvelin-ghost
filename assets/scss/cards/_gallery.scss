@@ -1,0 +1,37 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.kg-gallery-card {
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    @include minwidth($tablet) {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+}
+
+.kg-gallery-container {
+    position: relative;
+}
+
+.kg-gallery-row {
+    display: flex;
+    gap: 16px;
+
+    @include minwidth($tablet) {
+        gap: 32px;
+    }
+}
+
+.kg-gallery-image {
+    flex-grow: 1;
+
+    img {
+        box-shadow: 0 4px 8px rgba(0,0,0,.16);
+        height: 100%;
+        margin: 0;
+        object-fit: cover;
+        width: 100%;
+    }
+}
