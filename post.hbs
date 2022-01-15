@@ -14,10 +14,10 @@
 
         <div class="post__meta">
             <time class="post__meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD.MM.YYYY"}}</time>
-            {{#if primary_tag}}
-                {{#primary_tag}}
+            {{#if tags}}
+                {{#foreach tags}}
                     <a class="post__meta-tag" href="{{url}}"{{#if accent_color}} style="color:{{accent_color}};"{{/if}}>{{name}}</a>
-                {{/primary_tag}}
+                {{/foreach}}
             {{/if}}
         </div>
 
@@ -36,6 +36,11 @@
                 />
                 {{#if feature_image_caption}}
                     <figcaption>{{feature_image_caption}}</figcaption>
+                {{/if}}
+                {{#if featured}}
+                    <div class="post__ribbon">
+                        <span class="post__ribbon-text">{{@custom.featured_ribbon_text}}</span>
+                    </div>
                 {{/if}}
             </figure>
         {{/if}}

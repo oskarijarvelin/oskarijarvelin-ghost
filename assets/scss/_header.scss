@@ -7,12 +7,20 @@
     padding: 16px 0;
     position: fixed;
     top: 0;
-    width: 100vw;
+    width: 100%;
     z-index: 9999;
 }
 
 .header.mobile-open {
     height: 100vh;
+
+    .header__wrapper {
+        flex-wrap: wrap;
+    }
+
+    .header__toggle-nav {
+        order: 1;
+    }
 
     .header__toggle-nav-bar {
         top: 50%;
@@ -31,7 +39,7 @@
         flex: 0 0 100%;
         justify-content: center;
         max-width: 100%;
-        padding: 80px 0 40px;
+        padding: 80px 0 60px;
         width: 100%;
 
         .nav {
@@ -50,12 +58,13 @@
         display: flex;
         flex: 0 0 100%;
         justify-content: center;
+        margin: 0;
         max-width: 100%;
         width: 100%;
     }
 
     .header__action {
-        margin: 0 20px;
+        margin: 0 16px;
     }
 }
 
@@ -63,7 +72,6 @@
     @include wrapper;
     align-items: center;
     display: flex;
-    flex-wrap: wrap;
     position: relative;
 }
 
@@ -71,9 +79,8 @@
 
 // Logo
 .header__logo {
-    flex: 0 0 calc(100% - 34px);
-    max-width: calc(100% - 34px);
-    width: calc(100% - 34px);
+    flex: 1 0 auto;
+    order: 1;
     padding: 4px 0;
 
     @include minwidth($laptop) {
@@ -106,6 +113,7 @@
     flex: 0 0 32px;
     height: 32px;
     max-width: 32px;
+    order: 3;
     position: relative;
     width: 32px;
 
@@ -136,6 +144,7 @@
 // Nav
 .header__nav {
     display: none;
+    order: 2;
 
     @include minwidth($laptop) {
         display: flex;
@@ -185,16 +194,20 @@
 
 // Actions
 .header__actions {
-    display: none;
+    align-items: center;
+    display: flex;
+    margin-right: 40px;
+    order: 2;
 
     @include minwidth($laptop) {
-        align-items: center;
-        display: flex;
+        margin-left: 32px;
+        margin-right: 0;
+        order: 3;
     }
 }
 
 .header__action {
-    margin-left: 40px;
+    margin-left: 24px;
     padding-bottom: 4px;
 
     &.gh-portal-close {

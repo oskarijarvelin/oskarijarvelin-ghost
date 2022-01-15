@@ -96,9 +96,23 @@
                 "default": "Title (H1)",
                 "group": "homepage"
             },
+            "featured_ribbon_text": {
+                "type": "text",
+                "default": "Featured Ribbon Text",
+                "group": "homepage"
+            },
+            "premium_ribbon_text": {
+                "type": "text",
+                "default": "Premium Ribbon Text",
+                "group": "homepage"
+            },
+            "linkedin": {
+                "type": "text",
+                "default": "LinkedIn-url"
+            },
             "github": {
                 "type": "text",
-                "default": "Github-url"
+                "default": "GitHub-url"
             },
             "email_signup_text": {
                 "type": "text",

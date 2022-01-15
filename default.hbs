@@ -37,8 +37,12 @@
             </nav>
 
             <div class="header__actions">
+                {{#if @custom.linkedin}}
+                    <a class="header__action" href="{{@custom.linkedin}}" title="LinkedIn" target="_blank" rel="noopener">{{> "icons/linkedin"}}</a>
+                {{/if}}
+
                 {{#if @custom.github}}
-                    <a class="header__action" href="{{@custom.github}}" title="Github" target="_blank" rel="noopener">{{> "icons/github"}}</a>
+                    <a class="header__action" href="{{@custom.github}}" title="GitHub" target="_blank" rel="noopener">{{> "icons/github"}}</a>
                 {{/if}}
 
                 {{#if @member}}
@@ -54,7 +58,7 @@
 
     <footer id="footer" class="footer">
         <div class="footer__wrapper">
-            <div class="footer__copyright">&copy; {{date format="YYYY"}}: <a href="{{@site.url}}">{{@site.title}}</a></div>
+            <div class="footer__copyright">&copy; 2012 - {{date format="YYYY"}}: <a href="{{@site.url}}">{{@site.title}}</a></div>
             <nav class="footer__nav">{{navigation type="secondary"}}</nav>
         </div>
     </footer>

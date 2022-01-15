@@ -21,6 +21,21 @@ which templates loop over to generate a list of posts. --}}
             alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
             loading="lazy"
         />
+        {{#if featured}}
+            <div class="post-card__ribbon">
+                <span class="post-card__ribbon-text">{{@custom.featured_ribbon_text}}</span>
+            </div>
+        {{/if}}
+        {{#has visibility="members"}}
+            <div class="post-card__premium-ribbon">
+                <span class="post-card__premium-ribbon-text">{{@custom.premium_ribbon_text}}</span>
+            </div>
+        {{/has}}
+        {{#has visibility="paid"}}
+            <div class="post-card__premium-ribbon">
+                <span class="post-card__premium-ribbon-text">{{@custom.premium_ribbon_text}}</span>
+            </div>
+        {{/has}}
     </a>
     {{/if}}
 

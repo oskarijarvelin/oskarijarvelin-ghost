@@ -3,8 +3,18 @@
 
 blockquote {
     color: $color--muted;
-    padding: 8px 48px;
+    font-size: 18px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+    padding: 12px 24px !important;
     position: relative;
+
+    @include minwidth($laptop) {
+        font-size: 20px;
+        margin-bottom: 48px;
+        margin-top: 48px;
+        padding: 12px 96px 16px 48px !important;
+    }
 
     &:not(.kg-blockquote-alt):before {
         background-color: $color--accent;
@@ -26,7 +36,7 @@ blockquote {
     font-size: 24px;
     font-style: italic;
     line-height: 1.33;
-    padding: 2rem;
+    padding: 2rem !important;
     text-align: center;
 
     @include minwidth($tablet) {
@@ -35,6 +45,6 @@ blockquote {
 
     @include minwidth($laptop) {
         font-size: 30px;
-        padding: 4rem;
+        padding: 4rem !important;
     }
 }

@@ -4,6 +4,23 @@
 .post-card {
     display: flex;
     flex-direction: column;
+
+    &.featured {
+        box-shadow: 0 2px 8px rgba(#223388,.3);
+        border-radius: 4px;
+
+        .post-card__image {
+            box-shadow: none;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .post-card__content {
+            background-color: #f4f4f4;
+            border-top: 1px solid rgba(#223388, .1);
+            border-radius: 0 0 4px 4px;
+            padding: 24px 16px;
+        }
+    }
 }
 
 .post-card__image {
@@ -28,6 +45,50 @@
         top: 0;
         width: 100%;
     }
+}
+
+.post-card__ribbon {
+    border: 22px solid transparent;
+    border-bottom: 22px solid $color--accent;
+    font-size: 14px;
+    left: -34px;
+    padding: 0 10px;
+    position: absolute;
+    top: 4px;
+    transform: rotate(-45deg); 
+    width: 120px;
+}
+
+.post-card__ribbon-text {
+    color: $color--white;
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    left: 10px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 1px;
+}
+
+.post-card__premium-ribbon {
+    border: 22px solid transparent;
+    border-bottom: 22px solid $color--accent;
+    font-size: 14px;
+    left: -33px;
+    padding: 0 10px;
+    position: absolute;
+    top: 5px;
+    transform: rotate(-45deg); 
+    width: 120px;
+}
+
+.post-card__premium-ribbon-text {
+    color: $color--white;
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    left: 4px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 1px;
 }
 
 .post-card__content {

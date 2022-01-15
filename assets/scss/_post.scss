@@ -63,6 +63,7 @@
     @include wrapper;
     margin-top: 32px;
     margin-bottom: 32px;
+    position: relative;
 
     @include minwidth($laptop) {
         margin-top: 64px;
@@ -72,6 +73,36 @@
     img {
         box-shadow: 0 8px 16px rgba(0,0,0,.16);
     }
+}
+
+.post.featured {
+    .post__img {   
+        img {
+            box-shadow: 0 4px 12px rgba(#223388,.24);
+            border: 1px solid rgba(#223388,.1);
+        }
+    }
+}
+
+.post__ribbon {
+    border: 30px solid transparent;
+    border-bottom: 30px solid $color--accent;
+    left: -15px;
+    padding: 0 10px;
+    position: absolute;
+    top: 13px;
+    transform: rotate(-45deg); 
+    width: 180px;
+}
+
+.post__ribbon-text {
+    color: $color--white;
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    left: 20px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 2px;
 }
 
 
