@@ -71,25 +71,21 @@
 
 </article>
 
-{{#if @custom.show_recent_posts}}
-<aside class="read-more">
-    <h2 class="read-more__title">{{@custom.recent_posts_title}}</h2>
+{{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
+    {{#if more_posts}}
+        <aside class="read-more">
+            {{#if @custom.show_recent_posts}}<h2 class="read-more__title">{{@custom.recent_posts_title}}</h2>{{/if}}
 
-    <div class="article-list">
-        <div class="article-list__wrapper">
-
-            {{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
-                {{#if more_posts}}
+            <div class="article-list">
+                <div class="article-list__wrapper">
                     {{#foreach more_posts}}
                         {{> "post-card"}}
                     {{/foreach}}
-                {{/if}}
-            {{/get}}
-
-        </div>
-    </div>
-</aside>
-{{/if}}
+                </div>
+            </div>
+        </aside>
+    {{/if}}
+{{/get}}
 
 
 {{#if @custom.email_signup_text}}
