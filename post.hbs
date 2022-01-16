@@ -6,13 +6,21 @@
 
     <header class="post__header">
 
-        <h1 class="post__title">{{title}}</h1>
+        <h1 class="post__title">{{#if featured}}💎 {{/if}}{{title}}</h1>
 
         {{#if custom_excerpt}}
             <p class="post__excerpt">{{custom_excerpt}}</p>
         {{/if}}
 
         <div class="post__meta">
+            {{#unless access}}
+                {{#has visibility="members"}}
+                    <span class="post__meta-members">⛔ Tilaajille</span>
+                {{/has}}
+                {{#has visibility="paid"}}
+                    <span class="post__meta-members">⛔ Maksaville tilaajille</span>
+                {{/has}}
+            {{/unless}}
             <time class="post__meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD.MM.YYYY"}}</time>
             {{#if tags}}
                 {{#foreach tags}}
@@ -24,13 +32,13 @@
         {{#if feature_image}}
             <figure class="post__img">
                 <img
-                    width="1200"
-                    height="675"
+                    width="1280"
+                    height="720"
                     srcset="{{img_url feature_image size="s"}} 300w,
                             {{img_url feature_image size="m"}} 600w,
                             {{img_url feature_image size="l"}} 1200w,
                             {{img_url feature_image size="xl"}} 1920w"
-                    sizes="(min-width: 1280px) calc(100vw - 8vmin), 1200px"
+                    sizes="(min-width: 1280px) calc(100vw - 8vmin), 1280px"
                     src="{{img_url feature_image size="xl"}}"
                     alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
                 />
@@ -42,6 +50,16 @@
                         <span class="post__ribbon-text">{{@custom.featured_ribbon_text}}</span>
                     </div>
                 {{/if}}
+                {{#has visibility="members"}}
+                    <div class="post__premium-ribbon">
+                        <span class="post__premium-ribbon-text">{{@custom.premium_ribbon_text}}</span>
+                    </div>
+                {{/has}}
+                {{#has visibility="paid"}}
+                    <div class="post__premium-ribbon">
+                        <span class="post__premium-ribbon-text">{{@custom.premium_ribbon_text}}</span>
+                    </div>
+                {{/has}}
             </figure>
         {{/if}}
 
