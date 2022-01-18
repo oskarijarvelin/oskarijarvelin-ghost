@@ -71,6 +71,7 @@
 
     @include minwidth($tablet) {
         font-size: 22px;
+        max-width: 770px;
     }
 }
 
