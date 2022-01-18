@@ -17,11 +17,6 @@
 
 .kg-gallery-row {
     display: flex;
-    gap: 16px;
-
-    @include minwidth($tablet) {
-        gap: 32px;
-    }
 }
 
 .kg-gallery-image {
