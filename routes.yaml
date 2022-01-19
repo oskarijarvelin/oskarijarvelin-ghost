@@ -1,0 +1,21 @@
+routes:
+  /:
+    controller: channel
+    template: index
+    
+collections:
+  /tapahtunee/:
+    permalink: /tapahtunee/{slug}/
+    template: tapahtunee
+    filter: primary_tag:tapahtunee
+  /videot/:
+    permalink: /videot/{slug}/
+    template: videot
+    filter: primary_tag:videot
+  /:
+    permalink: /{slug}/
+    template: index
+
+taxonomies:
+  tag: /aihe/{slug}/
+  author: /kirjoittaja/{slug}/
