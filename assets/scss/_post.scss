@@ -221,6 +221,14 @@
     }
 }
 
+.read-more--gems {
+    margin: 40px 0 100px;
+
+    @include minwidth($laptop) {
+        margin: 80px 0 200px;
+    }
+}
+
 .read-more__title {
     @include wrapper;
     font-size: 24px;

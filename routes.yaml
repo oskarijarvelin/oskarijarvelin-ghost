@@ -2,6 +2,12 @@ routes:
   /:
     controller: channel
     template: index
+  /gem/:
+    template: gem
+    data: page.gem
+  /jasenyys/:
+    template: jasenyys
+    data: page.jasenyys
     
 collections:
   /tapahtunee/:
