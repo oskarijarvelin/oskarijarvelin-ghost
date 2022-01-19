@@ -122,14 +122,21 @@
 }
 
 .post__ribbon {
-    border: 30px solid transparent;
-    border-bottom: 30px solid $color--accent;
-    left: -15px;
+    border: 26px solid transparent;
+    border-bottom: 26px solid $color--accent;
+    left: -25px;
     padding: 0 10px;
     position: absolute;
-    top: 13px;
+    top: 14px;
     transform: rotate(-45deg); 
-    width: 180px;
+    width: 162px;
+
+    @include minwidth($tablet) {
+        border-width: 30px;
+        left: -14px;
+        top: 14px;
+        width: 180px;
+    }
 }
 
 .post__ribbon-text {
