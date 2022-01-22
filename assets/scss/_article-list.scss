@@ -6,7 +6,8 @@
     overflow: hidden;
 }
 
-.article-list__wrapper {
+.article-list__wrapper,
+.article-list__wrapper-alt {
     display: flex;
     flex-wrap: wrap;
     gap: 32px 16px;
