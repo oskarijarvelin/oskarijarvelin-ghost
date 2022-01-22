@@ -21,6 +21,7 @@
             <p>Name: {{@member.name}}</p>
             <p>First name: {{@member.firstname}}</p>
             <p>UUID: {{@member.uuid}}</p>
+            <a href="javascript:" data-members-edit-billing data-members-success="/billing-update-success/" data-members-cancel="/billing-update-cancel/">Muokkaa maksutietoja</a>
         {{else}}
             <p>Not logged in</p>
         {{/if}}
@@ -79,7 +80,7 @@
                     <span class="subscriber-detail-content">{{date current_period_end format="DD.MM.YYYY"}}</span>
                 </div>
                 </div>
-                {{cancel_link}}
+                {{cancel_link cancelLabel="Peru tilaus" continueLabel="Jatka tilausta"}}
             </div>
         {{/foreach}}
 
