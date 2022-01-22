@@ -1,7 +1,7 @@
 {{!< default}}
 
-{{#get "tags" filter="slug:tapahtunee"}}
-    {{#tag}}
+{{#get "tags" filter="slug:tapahtunee" limit="1"}}
+    {{#foreach tags}}
         <header class="tag__header{{#if feature_image}} tag__header--has-cover{{/if}}">
 
             {{#if feature_image}}
@@ -31,7 +31,7 @@
             </div>
             
         </header>
-    {{/tag}}
+    {{/foreach}}
 {{/get}}
 
 <section class="tag">
