@@ -38,7 +38,7 @@
             <p>Plan currency: {{plan.currency}}</p>
             <p>Plan amount: {{plan.amount}}</p>
             <p>Status: {{status}}</p>
-            <p>Start date: {{start_date current_period_end format="DD.MM.YYYY"}}</p>
+            <p>Start date: {{date start_date format="DD.MM.YYYY"}}</p>
             <p>Maksukortti: **** **** **** {{default_payment_card_last4}}</p>
             <p>Tilaus päättyy: {{date current_period_end format="DD.MM.YYYY"}}</p>
             <hr>
@@ -76,7 +76,7 @@
                         Next bill date
                     {{/if}}
                     </label>
-                    <span class="subscriber-detail-content">{{date current_period_end format="DD MMM YYYY"}}</span>
+                    <span class="subscriber-detail-content">{{date current_period_end format="DD.MM.YYYY"}}</span>
                 </div>
                 </div>
                 {{cancel_link}}
