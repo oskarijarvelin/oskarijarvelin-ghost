@@ -25,11 +25,30 @@
             <p>Not logged in</p>
         {{/if}}
 
+        <h2>Tilaukset</h2>
+        {{#foreach @member.subscriptions}}
+            <p>Subscription ID: {{id}}</p>
+            <p>Avatar: {{avatar_image}}</p>
+            <p>Customer ID: {{customer.id}}</p>
+            <p>Customer name: {{customer.name}}</p>
+            <p>Customer email: {{customer.email}}</p>
+            <p>Plan ID: {{plan.id}}</p>
+            <p>Plan nickname: {{plan.nickname}}</p>
+            <p>Plan interval: {{plan.interval}}</p>
+            <p>Plan currency: {{plan.currency}}</p>
+            <p>Plan amount: {{plan.amount}}</p>
+            <p>Status: {{status}}</p>
+            <p>Start date: {{start_date current_period_end format="DD.MM.YYYY"}}</p>
+            <p>Maksukortti: **** **** **** {{default_payment_card_last4}}</p>
+            <p>Tilaus päättyy: {{date current_period_end format="DD.MM.YYYY"}}</p>
+            <hr>
+        {{/foreach}}
+
         {{#foreach @member.subscriptions}}
             <div class="subscription">
                 {{#if cancel_at_period_end}}
                 <p>
-                    <strong class="subscription-expiration-warning">Your subscription will expire on {{date current_period_end format="DD.MM,YYYY"}}.</strong> If you change your mind in the mean time you can turn auto-renew back on to continue your subscription.
+                    <strong class="subscription-expiration-warning">Your subscription will expire on {{date current_period_end format="DD.MM.YYYY"}}.</strong> If you change your mind in the mean time you can turn auto-renew back on to continue your subscription.
                 </p>
                 {{else}}
                 <p>
