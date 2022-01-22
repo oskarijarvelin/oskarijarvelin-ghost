@@ -8,6 +8,8 @@ routes:
   /jasenyys/:
     template: jasenyys
     data: page.jasenyys
+  /tili/:
+    template: tili
     
 collections:
   /tapahtunee/:
