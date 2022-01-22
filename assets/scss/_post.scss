@@ -173,6 +173,37 @@
 
 
 
+
+// POST FOOTER
+.article__footer {
+    @include wrapper(800);
+}
+
+.article__footer-wrapper {
+    align-items: center;
+    border-top: 1px solid rgba($color--muted, .2);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 32px;
+
+    @include minwidth($laptop) {
+        padding-top: 64px;
+    }
+
+    a {
+        color: $color--accent;
+        font-weight: 700;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+
+
 // CONTENT CTA
 .content-cta {
     position: relative;

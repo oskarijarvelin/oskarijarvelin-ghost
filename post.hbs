@@ -66,6 +66,22 @@
         {{content}}
     </section>
 
+    <footer class="article__footer">
+        <div class="article__footer-wrapper">
+            <div>
+                {{#prev_post}}
+                    <a href="{{url}}" title="{{title}}">&larr; Edellinen</a>
+                {{/prev_post}}
+            </div>
+
+            <div>
+                {{#next_post}}
+                    <a href="{{url}}" title="{{title}}">Seuraava &rarr;</a>
+                {{/next_post}}
+            </div>
+        </div>
+    </footer>
+
 </article>
 
 {{#if @custom.show_recent_posts}}
