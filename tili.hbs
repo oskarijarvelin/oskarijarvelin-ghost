@@ -14,11 +14,22 @@
             </form>
         {{/if}}
 
+        <h2>Jäsenyys</h2>
+        {{#if @member}}
+            <p>Active paid subscription: {{#if @member.paid}}Yes{{else}}No{{/if}}</p>
+            <p>Email: {{@member.email}}</p>
+            <p>Name: {{@member.name}}</p>
+            <p>First name: {{@member.firstname}}</p>
+            <p>UUID: {{@member.uuid}}</p>
+        {{else}}
+            <p>Not logged in</p>
+        {{/if}}
+
         {{#foreach @member.subscriptions}}
             <div class="subscription">
                 {{#if cancel_at_period_end}}
                 <p>
-                    <strong class="subscription-expiration-warning">Your subscription will expire on {{date current_period_end format="DD MMM YYYY"}}.</strong> If you change your mind in the mean time you can turn auto-renew back on to continue your subscription.
+                    <strong class="subscription-expiration-warning">Your subscription will expire on {{date current_period_end format="DD.MM,YYYY"}}.</strong> If you change your mind in the mean time you can turn auto-renew back on to continue your subscription.
                 </p>
                 {{else}}
                 <p>
