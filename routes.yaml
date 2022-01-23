@@ -9,9 +9,6 @@ routes:
     template: jasenyys
     data: page.jasenyys
   /tili/: tili
-  /signup/: members/signup
-  /signin/: members/signin
-  /account/: members/account
     
 collections:
   /tapahtunee/:
