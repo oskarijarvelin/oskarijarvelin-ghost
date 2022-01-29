@@ -2,7 +2,7 @@
     "name": "oskarijarvelin",
     "description": "Ghost theme for oskarijarvelin.fi",
     "demo": "https://oskarijarvelin.fi",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "engines": {
         "ghost": ">=4.0.0",
         "ghost-api": "v4"

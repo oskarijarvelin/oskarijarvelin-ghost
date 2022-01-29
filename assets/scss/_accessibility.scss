@@ -1,0 +1,26 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.screen-reader-text {
+    height: 1px;
+    left: -999px;
+    position: absolute;
+    top: auto;
+    width: 1px;
+
+    &:focus {
+        background-color: $color--accent;
+        color: $color--white;
+        display: inline-block;
+        font-weight: 700;
+        height: auto;
+        left: 8px;
+        margin: auto;
+        padding: 16px 32px;
+        position: fixed;
+        text-decoration: none;
+        top: 8px;
+        width: auto;
+        z-index: 9999999;
+    }
+}
