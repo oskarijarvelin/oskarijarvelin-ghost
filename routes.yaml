@@ -19,6 +19,11 @@ collections:
     permalink: /videot/{slug}/
     template: videot
     filter: primary_tag:videot
+  /saavutettavuus/:
+    permalink: /saavutettavuus/{slug}/
+    template: tag
+    filter: primary_tag:saavutettavuus
+    data: tag.saavutettavuus
   /:
     permalink: /{slug}/
     template: index
