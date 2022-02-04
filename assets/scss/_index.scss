@@ -36,11 +36,15 @@
     @include minwidth($laptop) {
         flex: 0 0 calc(50% - 40px);
         max-width: calc(50% - 40px);
-        padding: 80px;
+        padding: 80px 48px;
         width: calc(50% - 40px);
     }
 
     @include minwidth($desktop) {
+        padding: 120px 80px;
+    }
+
+    @include minwidth(1520) {
         padding: 120px;
     }
 }
@@ -73,8 +77,12 @@
 }
 
 .site-header__title {
-    margin: 12px 0;
+    margin: 12px 0 0;
     z-index: 1;
+
+    @include minwidth($tablet) {
+        margin: 12px 0;
+    }
 
     @include minwidth($laptop) {
         margin: 24px 0;
@@ -88,9 +96,19 @@
 
 .site-header__text {
     font-size: 20px;
-    max-width: 75%;
+    max-width: 100%;
 
     @include minwidth($tablet) {
         font-size: 22px;
+        max-width: 75%;
+    }
+
+    @include minwidth($laptop) {
+        max-width: 100%;
+    }
+
+    @include minwidth($desktop) {
+        font-size: 24px;
+        max-width: 75%;
     }
 }

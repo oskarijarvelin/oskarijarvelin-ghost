@@ -5,76 +5,123 @@
     margin: 32px 0 80px;
 }
 
-.author__header {
-    align-items: center;
+.author-header {
+    align-items: stretch;
+    background-color: $color--border;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 20px));
     display: flex;
-    flex-direction: column;
-    height: 50vw;
-    max-height: 40vh;
-    min-height: 400px;
+    flex-wrap: wrap;
     justify-content: center;
-    padding: 0;
-    position: relative;
+    min-height: 300px;
 
-    @include minwidth($tablet) {
-        min-height: 300px;
+    @include minwidth($laptop) {
+        clip-path: polygon(100% 0, 100% 100%, 50% 95%, 0 100%, 0 0);
     }
 }
 
-.author__header--has-cover {
-    &:after {
-        background-image: linear-gradient(90deg, rgba(0,0,0,.75), rgba(0,0,0,.15));
-        content: '';
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
+.author-header--no-cover {
+    @include wrapper;
+    background-color: unset;
+    clip-path: unset;
+
+    .author-header__left {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 80px 0;
         width: 100%;
     }
-
-    .author__header-content {
-        color: $color--white;
-    }
-
-    .author__meta-link {
-        color: $color--white;
-    
-        &:before {
-            background-color: $color--white;
-        }
-    }
 }
 
-.author__header-img {
-    height: 100%;
-    left: -2px;
-    max-width: calc(100% + 2px);
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    width: calc(100% + 2px);
-}
-
-.author__header-content {
+.author-header__left {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    padding: 18px;
     width: 100%;
-    max-width: 1280px;
-    color: $color--body;
-    padding: 0 60px 0 16px;
+
+    @include minwidth($tablet) {
+        padding: 40px 32px;
+    }
+
+    @include minwidth($laptop) {
+        flex: 0 0 calc(50% - 40px);
+        max-width: calc(50% - 40px);
+        padding: 80px 48px;
+        width: calc(50% - 40px);
+    }
+
+    @include minwidth($desktop) {
+        padding: 120px 80px;
+    }
+
+    @include minwidth(1520) {
+        padding: 120px;
+    }
+}
+
+.author-header__right {
+    flex: 0 0 100%;
+    max-width: 100%;
     position: relative;
+    width: 100%;
+    min-height: 300px;
+
+    @include minwidth($laptop) {
+        flex: 0 0 calc(50% + 40px);
+        max-width: calc(50% + 40px);
+        width: calc(50% + 40px);
+    }
+}
+
+.author-header__img {
+    clip-path: polygon(0 20px, 100% 0, 100% 100%, 0 100%);
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+
+    @include minwidth($laptop) {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 40px 100%);
+        height: 100%;
+        width: calc(100% + 40px);
+    }
+}
+
+.author-header__title {
+    margin: 12px 0 0;
     z-index: 1;
 
     @include minwidth($tablet) {
-        padding: 0 120px 0 32px;
+        margin: 12px 0;
+    }
+
+    @include minwidth($laptop) {
+        margin: 24px 0;
     }
 }
 
-.author__header-title {
-    align-items: center;
-    display: flex;
-    margin: 0;
+.author-header__bio {
+    font-size: 20px;
+    max-width: 100%;
+
+    @include minwidth($tablet) {
+        font-size: 22px;
+        max-width: 75%;
+    }
+
+    @include minwidth($laptop) {
+        max-width: 100%;
+    }
+
+    @include minwidth($desktop) {
+        font-size: 24px;
+        max-width: 75%;
+    }
 }
 
-.author__profile-pic {
+
+.author-header__profile-pic {
     border-radius: 50%;
     height: 64px;
     margin-right: 16px;
@@ -85,17 +132,7 @@
     }
 }
 
-.author__bio {
-    font-size: 20px;
-    margin: 0 0 16px;
-
-    @include minwidth($tablet) {
-        font-size: 22px;
-        max-width: 770px;
-    }
-}
-
-.author__meta {
+.author-header__meta {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
@@ -104,7 +141,7 @@
     margin: 32px 0;
 }
 
-.author__meta-link {
+.author-header__meta-link {
     color: $color--body;
     padding-left: 16px;
     position: relative;
