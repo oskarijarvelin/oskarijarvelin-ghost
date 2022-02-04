@@ -19,6 +19,10 @@ h1 {
     }
 
     @include minwidth($laptop) {
+        font-size: 42px;
+    }
+
+    @include minwidth($desktop) {
         font-size: 56px;
     }
 }

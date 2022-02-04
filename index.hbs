@@ -1,27 +1,34 @@
 {{!< default}}
 
 {{#if @site.cover_image}}
-    <header class="site__header">
-        <img class="site__header-img"
-            srcset="{{img_url @site.cover_image size="s"}} 300w,
-                    {{img_url @site.cover_image size="m"}} 600w,
-                    {{img_url @site.cover_image size="l"}} 1200w,
-                    {{img_url @site.cover_image size="xl"}} 1920w"
-            sizes="100vw"
-            src="{{img_url @site.cover_image size="xl"}}"
-            alt="{{title}}"
-        />
-        <h1 class="site__header-title">
-            {{#if @custom.title_h1}}
-                {{@custom.title_h1}}
-            {{else}}
-                {{#if @site.logo}}
-                    <img class="site__header-logo" src="{{img_url @site.logo size="m"}}" alt="{{@site.title}}" width="349" height="60"/>
+    <header class="site-header">
+        <div class="site-header__left">
+            <h1 class="site-header__title">
+                {{#if @custom.title_h1}}
+                    {{@custom.title_h1}}
                 {{else}}
-                    {{@site.title}}
+                    {{#if @site.logo}}
+                        <img class="site-header__logo" src="{{img_url @site.logo size="m"}}" alt="{{@site.title}}" width="349" height="60"/>
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
                 {{/if}}
+            </h1>
+            {{#if @custom.index_hero_text}}
+                <p class="site-header__text">{{@custom.index_hero_text}}</p>
             {{/if}}
-        </h1>
+    </div>
+        <div class="site-header__right">
+            <img class="site-header__img"
+                srcset="{{img_url @site.cover_image size="s"}} 300w,
+                        {{img_url @site.cover_image size="m"}} 600w,
+                        {{img_url @site.cover_image size="l"}} 1200w,
+                        {{img_url @site.cover_image size="xl"}} 1920w"
+                sizes="100vw"
+                src="{{img_url @site.cover_image size="xl"}}"
+                alt="{{title}}"
+            />
+        </div>
     </header>
 {{/if}}
 

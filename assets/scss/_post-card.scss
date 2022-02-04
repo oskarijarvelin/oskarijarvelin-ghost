@@ -50,6 +50,7 @@
 .post-card__ribbon {
     border: 22px solid transparent;
     border-bottom: 22px solid rgba(#223388, .85);
+    color: $color--white;
     font-size: 14px;
     left: -33px;
     padding: 0 10px;
@@ -74,6 +75,7 @@
 .post-card__premium-ribbon {
     border: 22px solid transparent;
     border-top: 22px solid $color--accent;
+    color: $color--white;
     bottom: 5px;
     font-size: 14px;
     padding: 0 10px;

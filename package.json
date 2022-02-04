@@ -96,6 +96,11 @@
                 "default": "Title (H1)",
                 "group": "homepage"
             },
+            "index_hero_text": {
+                "type": "text",
+                "default": "Tämä näkyy etusivulla",
+                "group": "homepage"
+            },
             "featured_ribbon_text": {
                 "type": "text",
                 "default": "Featured Ribbon Text",
