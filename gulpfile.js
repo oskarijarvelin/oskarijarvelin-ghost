@@ -67,8 +67,8 @@ function js(done) {
             'assets/js/**/*.js',
             'assets/js/*.js'
         ], {sourcemaps: true}),
-        concat('theme.min.js'),
         uglify(),
+        concat('theme.min.js'),
         dest('assets/built/', {sourcemaps: '.'}),
         livereload()
     ], handleError(done));
