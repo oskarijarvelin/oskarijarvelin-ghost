@@ -41,7 +41,7 @@
     }
 
     @include minwidth($desktop) {
-        padding: 120px 64px;
+        padding: 96px 64px;
     }
 
     @include minwidth(1520) {
