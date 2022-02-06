@@ -121,55 +121,6 @@
     }
 }
 
-.post__ribbon {
-    border: 26px solid transparent;
-    border-bottom: 26px solid $color--accent;
-    left: -25px;
-    padding: 0 10px;
-    position: absolute;
-    top: 14px;
-    transform: rotate(-45deg); 
-    width: 162px;
-
-    @include minwidth($tablet) {
-        border-width: 30px;
-        left: -14px;
-        top: 14px;
-        width: 180px;
-    }
-}
-
-.post__ribbon-text {
-    color: $color--white;
-    font-family: 'Roboto Condensed';
-    font-weight: 700;
-    left: 20px;
-    position: absolute;
-    text-transform: uppercase;
-    top: 2px;
-}
-
-.post__premium-ribbon {
-    border: 30px solid transparent;
-    border-top: 30px solid $color--accent;
-    bottom: 13px;
-    padding: 0 10px;
-    position: absolute;
-    right: -15px;
-    transform: rotate(-45deg); 
-    width: 180px;
-}
-
-.post__premium-ribbon-text {
-    bottom: 1px;
-    color: $color--white;
-    font-family: 'Roboto Condensed';
-    font-weight: 700;
-    position: absolute;
-    right: 20px;
-    text-transform: uppercase;
-}
-
 
 
 

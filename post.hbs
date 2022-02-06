@@ -42,21 +42,6 @@
                 {{#if feature_image_caption}}
                     <figcaption>{{feature_image_caption}}</figcaption>
                 {{/if}}
-                {{#if featured}}
-                    <div class="post__ribbon">
-                        <span class="post__ribbon-text">{{@custom.featured_ribbon_text}}</span>
-                    </div>
-                {{/if}}
-                {{#has visibility="members"}}
-                    <div class="post__premium-ribbon">
-                        <span class="post__premium-ribbon-text">{{@custom.premium_ribbon_text}}</span>
-                    </div>
-                {{/has}}
-                {{#has visibility="paid"}}
-                    <div class="post__premium-ribbon">
-                        <span class="post__premium-ribbon-text">{{@custom.premium_ribbon_text}}</span>
-                    </div>
-                {{/has}}
             </figure>
         {{/if}}
 
