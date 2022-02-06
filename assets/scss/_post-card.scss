@@ -18,8 +18,13 @@
         .post-card__content {
             background-color: #f4f4f4;
             border-top: 1px solid rgba(#223388, .1);
+            padding: 24px 16px 0;
+        }
+
+        .post-card__meta {
+            background-color: #f4f4f4;
             border-radius: 0 0 4px 4px;
-            padding: 24px 16px;
+            padding: 0 16px 24px;
         }
     }
 }
