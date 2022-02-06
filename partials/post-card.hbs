@@ -2,65 +2,63 @@
 which templates loop over to generate a list of posts. --}}
 
 <article class="article post-card {{post_class}}">
-
-    {{#if feature_image}}
-    <a class="post-card__image" href="{{url}}" title="Avaa artikkeli: {{title}}{{#has visibility="members"}} (tilaajille){{/has}}{{#has visibility="paid"}} (tilaajille){{/has}}" tabindex="-1" aria-hidden="true" role="presentation">
-        {{!-- This is a responsive image, it loads different sizes depending on device
-        https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-        <img
-            srcset="{{img_url feature_image size="s"}} 384w,
-                    {{img_url feature_image size="m"}} 600w,
-                    {{img_url feature_image size="l"}} 1280w"
-            sizes=" (max-width: 420px) calc(100vw - 32px),
-                    (max-width: 960px) calc(50vw - 32px), 
-                    (max-width: 1280px) calc(33.33vw - 32px), 
-                    384px"
-            src="{{img_url feature_image size="m"}}"
-            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}Artikkelikuva: {{title}}{{/if}}"
-            loading="lazy"
-        />
-        {{#if featured}}
-            <div class="post-card__ribbon">
-                <span class="post-card__ribbon-text">{{@custom.featured_ribbon_text}}</span>
+    <a class="post-card__link" href="{{url}}" title="Avaa artikkeli: {{title}}{{#has visibility="members"}} (tilaajille){{/has}}{{#has visibility="paid"}} (tilaajille){{/has}}">
+        {{#if feature_image}}
+            <div class="post-card__image" href="{{url}}" title="Avaa artikkeli: {{title}}{{#has visibility="members"}} (tilaajille){{/has}}{{#has visibility="paid"}} (tilaajille){{/has}}">
+                {{!-- This is a responsive image, it loads different sizes depending on device
+                https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+                <img
+                    srcset="{{img_url feature_image size="s"}} 384w,
+                            {{img_url feature_image size="m"}} 600w,
+                            {{img_url feature_image size="l"}} 1280w"
+                    sizes=" (max-width: 420px) calc(100vw - 32px),
+                            (max-width: 960px) calc(50vw - 32px), 
+                            (max-width: 1280px) calc(33.33vw - 32px), 
+                            384px"
+                    src="{{img_url feature_image size="m"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}Artikkelikuva: {{title}}{{/if}}"
+                    loading="lazy"
+                />
+                {{#if featured}}
+                    <div class="post-card__ribbon">
+                        <span class="post-card__ribbon-text">{{@custom.featured_ribbon_text}}</span>
+                    </div>
+                {{/if}}
+                {{#has visibility="members"}}
+                    <div class="post-card__premium-ribbon">
+                        <span class="post-card__premium-ribbon-text">{{@custom.premium_ribbon_text}}</span>
+                    </div>
+                {{/has}}
+                {{#has visibility="paid"}}
+                    <div class="post-card__premium-ribbon">
+                        <span class="post-card__premium-ribbon-text">{{@custom.premium_ribbon_text}}</span>
+                    </div>
+                {{/has}}
             </div>
         {{/if}}
-        {{#has visibility="members"}}
-            <div class="post-card__premium-ribbon">
-                <span class="post-card__premium-ribbon-text">{{@custom.premium_ribbon_text}}</span>
-            </div>
-        {{/has}}
-        {{#has visibility="paid"}}
-            <div class="post-card__premium-ribbon">
-                <span class="post-card__premium-ribbon-text">{{@custom.premium_ribbon_text}}</span>
-            </div>
-        {{/has}}
-    </a>
-    {{/if}}
 
-    <div class="post-card__content">
-
-        <h2 class="post-card__title">
-            <a href="{{url}}" title="Avaa artikkeli: {{title}}{{#has visibility="members"}} (tilaajille){{/has}}{{#has visibility="paid"}} (tilaajille){{/has}}">
+        <div class="post-card__content">
+            <h2 class="post-card__title">
                 {{#if featured}}💎 {{/if}}{{title}}
-            </a>
-        </h2>
+            </h2>
 
-        <div class="post-card__meta">
-            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD.MM.YYYY"}}</time>
-            {{#if primary_tag}}
-                {{#primary_tag}}
-                    <a href="{{url}}"{{#if accent_color}} style="color:{{accent_color}};"{{/if}}>{{name}}</a>
-                {{/primary_tag}}
-            {{/if}}
-            <span>{{reading_time seconds=(t "Alle minuutti") minute=(t "1 min") minutes=(t "% min")}}</span>
+            <div class="post-card__excerpt">
+                {{excerpt}}
+            </div>
         </div>
 
-        <div class="post-card__excerpt">
-            {{excerpt}}
-        </div>
-
-    </div>
+    </a>
         
+
+    <div class="post-card__meta">
+        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD.MM.YYYY"}}</time>
+        {{#if primary_tag}}
+            {{#primary_tag}}
+                <a href="{{url}}"{{#if accent_color}} style="color:{{accent_color}};"{{/if}}>{{name}}</a>
+            {{/primary_tag}}
+        {{/if}}
+        <span>{{reading_time seconds=(t "Alle minuutti") minute=(t "1 min") minutes=(t "% min")}}</span>
+    </div>
     
 
 </article>
