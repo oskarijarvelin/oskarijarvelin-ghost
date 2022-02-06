@@ -4,6 +4,7 @@
 .post-card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 
     &.featured {
         box-shadow: 0 2px 12px rgba(#223388,.2);
@@ -24,9 +25,7 @@
 }
 
 .post-card__link {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex: 1 0 auto;
     text-decoration: none;
 }
 
@@ -128,9 +127,7 @@
 }
 
 .post-card__meta {
-    align-self: flex-start;
     color: $color--muted;
-    flex: 0 0 100%;
     flex-wrap: wrap;
     font-family: 'Roboto Condensed';
     font-size: 14px;
