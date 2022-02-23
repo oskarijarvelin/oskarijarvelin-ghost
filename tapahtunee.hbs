@@ -8,10 +8,6 @@
 
                 <h1 class="tag-header__title">{{name}}</h1>
                 
-                <div class="tag-header__meta">
-                    {{plural ../pagination.total empty='Ei artikkeleita' singular='% artikkeli' plural='% artikkelia'}}
-                </div>
-
                 {{#if description}}
                     <div class="tag-header__excerpt">{{description}}</div>
                 {{/if}}
