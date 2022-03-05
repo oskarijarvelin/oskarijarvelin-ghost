@@ -54,13 +54,13 @@
     <footer class="article__footer">
         <div class="article__footer-wrapper">
             <div>
-                {{#prev_post}}
+                {{#prev_post in="primary_tag"}}
                     <a href="{{url}}" title="{{title}}">&larr; Edellinen jakso</a>
                 {{/prev_post}}
             </div>
 
             <div>
-                {{#next_post}}
+                {{#next_post in="primary_tag"}}
                     <a href="{{url}}" title="{{title}}">Seuraava jakso &rarr;</a>
                 {{/next_post}}
             </div>
@@ -73,7 +73,7 @@
     {{#get "posts" filter="tag:tapahtunee+id:-{{id}}" limit="3" as |more_posts|}}
         {{#if more_posts}}
             <aside class="read-more">
-                <h2 class="read-more__title">{{@custom.recent_posts_title}}</h2>
+                <h2 class="read-more__title">{{@custom.recent_podcasts_title}}</h2>
 
                 <div class="article-list">
                     <div class="article-list__wrapper">

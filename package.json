@@ -143,6 +143,11 @@
                 "type": "text",
                 "default": "Lue lisää -teksti",
                 "group": "post"
+            },
+            "recent_podcasts_title": {
+                "type": "text",
+                "default": "Kuuntele lisää -teksti",
+                "group": "post"
             }
         }
     },
