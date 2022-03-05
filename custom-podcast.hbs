@@ -70,7 +70,7 @@
 </article>
 
 {{#if @custom.show_recent_posts}}
-    {{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
+    {{#get "posts" filter="tag:tapahtunee" limit="3" as |more_posts|}}
         {{#if more_posts}}
             <aside class="read-more">
                 <h2 class="read-more__title">{{@custom.recent_posts_title}}</h2>
