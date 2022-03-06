@@ -15,6 +15,7 @@ collections:
     permalink: /tapahtunee/{slug}/
     template: tapahtunee
     filter: primary_tag:tapahtunee
+    data: page.tapahtunee
   /videot/:
     permalink: /videot/{slug}/
     template: videot

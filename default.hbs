@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{@site.locale}}">
 <head>
-    <title>{{meta_title}}</title>
+    {{#unless page}}
+        <title>{{meta_title}}</title>
+    {{else}}
+        {{#page}}
+            <title>{{meta_title}}</title>
+            <meta name="description" content="{{meta_description}}"/>
+        {{/page}}
+    {{/unless}}
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="HandheldFriendly" content="True" />
