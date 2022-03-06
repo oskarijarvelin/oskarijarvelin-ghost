@@ -51,3 +51,30 @@
         </div>
     </div>
 </section>
+
+{{#if @custom.email_signup_text}}
+    {{#unless @member}}
+        {{#if access}}
+            <header class="cta">
+                <div class="cta__left">
+                    {{#if @custom.email_signup_text}}<h2 class="cta__title">{{@custom.email_signup_text}}</h2>{{/if}}
+                    <a class="cta__link" href="#/portal" data-portal>
+                        <div class="cta__input">{{@custom.email_signup_placeholder}}</div>
+                        <span class="cta__button">{{@custom.email_signup_button}}</span>
+                    </a>
+                </div>
+                <div class="cta__right">
+                    <img class="cta__img"
+                        srcset="{{img_url @site.cover_image size="s"}} 300w,
+                                {{img_url @site.cover_image size="m"}} 600w,
+                                {{img_url @site.cover_image size="l"}} 1200w,
+                                {{img_url @site.cover_image size="xl"}} 1920w"
+                        sizes="(max-width: 960px) 100vw, calc(50vw + 40px)"
+                        src="{{img_url @site.cover_image size="l"}}"
+                        alt="{{title}}"
+                    />
+                </div>
+            </header>
+        {{/if}}
+    {{/unless}}
+{{/if}}
