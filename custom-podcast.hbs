@@ -91,7 +91,7 @@
 {{#if @custom.email_signup_text}}
     {{#unless @member}}
         {{#if access}}
-            <header class="cta">
+            <section class="cta">
                 <div class="cta__left">
                     {{#if @custom.email_signup_text}}<h2 class="cta__title">{{@custom.email_signup_text}}</h2>{{/if}}
                     <a class="cta__link" href="#/portal" data-portal>
@@ -110,7 +110,7 @@
                         alt="{{title}}"
                     />
                 </div>
-            </header>
+            </section>
         {{/if}}
     {{/unless}}
 {{/if}}
