@@ -22,6 +22,7 @@
                 {{/has}}
             {{/unless}}
             <time class="post__meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD.MM.YYYY"}}</time>
+            {{#if featured}} <a class="post__meta-tag" href="https://www.oskarijarvelin.fi/gem/">💎-artikkelit</a>{{/if}}
             {{#if tags}}
                 {{#foreach tags}}
                     <a class="post__meta-tag" href="{{url}}"{{#if accent_color}} style="color:{{accent_color}};"{{/if}}>{{name}}</a>
