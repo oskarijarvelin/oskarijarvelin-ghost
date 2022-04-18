@@ -5,7 +5,11 @@
         <title>{{meta_title}}</title>
     {{else}}
         {{#page}}
-            <title>{{title}}</title>
+            {{#if meta_title}}
+                <title>{{meta_title}}</title>
+            {{else}}
+                <title>{{title}}</title>
+            {{/if}}
         {{/page}}
     {{/unless}}
     <meta charset="utf-8" />
