@@ -74,7 +74,7 @@
                             {{@custom.title_h1}}
                         {{/if}}
                     </h2>
-                    {{#get 'tags' limit='all' filter="slug:saavutettavuus+ghost" include='count.posts' order='count.posts desc'}}
+                    {{#get 'tags' limit='all' filter="slug:[saavutettavuus, videot]" include='count.posts' order='count.posts desc'}}
                         <ul class="footer__list">
                             {{#foreach tags}}
                                 <li class="footer__list-item">
