@@ -5,6 +5,7 @@
     background-color: $color--accent;
     color: $color--white;
     font-size: 16px;
+    overflow-x: hidden;
     padding: 0 0 100px;
 
     @include minwidth($tablet) {
@@ -21,7 +22,7 @@
     width: calc(100% + 2px);
 
     @include minwidth($tablet) {
-        clip-path: polygon(0 0, 50% 100%, 100% 0);
+        clip-path: polygon(100% 0, 100% 5%, 50% 100%, 0 5%, 0 0);
     }
 }
 
