@@ -4,11 +4,6 @@
 .oskari {
     font-family: 'Roboto Condensed';
     font-weight: 700;
-    font-size: 18px;
-
-    @include minwidth($tablet) {
-        font-size: 20px;
-    }
 }
 
 .index {

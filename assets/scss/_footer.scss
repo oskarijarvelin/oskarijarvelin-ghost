@@ -57,6 +57,14 @@
             text-decoration: underline;
         }
     }
+
+    .oskari {
+        font-size: 18px;
+    
+        @include minwidth($tablet) {
+            font-size: 20px;
+        }
+    }
 }
 
 .footer__list {
