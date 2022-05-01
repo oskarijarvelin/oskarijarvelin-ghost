@@ -5,15 +5,29 @@
     background-color: $color--accent;
     color: $color--white;
     font-size: 16px;
-    padding: 40px 0 100px;
+    padding: 0 0 100px;
 
     @include minwidth($tablet) {
-        padding: 16px 0;
+        padding: 0 0 16px;
+    }
+}
+
+.footer__kulma {
+    background-color: $color--bg;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 5%);
+    margin-top: -1px;
+    min-height: 40px;
+    transform: translateY(-1px);
+    width: calc(100% + 2px);
+
+    @include minwidth($tablet) {
+        clip-path: polygon(0 0, 50% 100%, 100% 0);
     }
 }
 
 .footer__wrapper {
     @include wrapper;
+    overflow: hidden;
 }
 
 .footer__flexbox {
@@ -90,7 +104,7 @@
 }
 
 .footer__action {
-    margin-right: 24px;
+    margin-right: 16px;
     padding-bottom: 4px;
 }
 
