@@ -14,6 +14,96 @@
 
 .footer__wrapper {
     @include wrapper;
+}
+
+.footer__flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -32px -32px 0;
+}
+
+.footer__column {
+    flex: 0 0 calc(100% - 32px);
+    margin: 0 32px 32px 0;
+    max-width: calc(100% - 32px);
+    width: calc(100% - 32px);
+
+    @include minwidth($tablet) {
+        flex: 0 0 calc(50% - 32px);
+        max-width: calc(50% - 32px);
+        width: calc(50% - 32px);
+    }
+
+    a {
+        color: $color--white;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer__title {
+
+}
+
+.footer__cta-title {
+    margin: 32px 0 8px;
+}
+
+.footer__cta-link {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    text-decoration: none;
+}
+
+.footer__cta-input {
+    background-color: $color--bg;
+    border: 1px solid $color--border;
+    border-radius: 4px 0 0 4px;
+    color: $color--muted;
+    max-width: 300px;
+    padding: 8px 16px;
+    text-align: left;
+    width: calc(100% - 100px);
+}
+
+.footer__cta-button {
+    background-color: $color--accent;
+    border: 1px solid rgba($color--white, .1);
+    border-radius: 0 4px 4px 0;
+    color: $color--white;
+    font-family: 'Roboto Condensed';
+    padding: 8px 24px;
+}
+
+.footer__actions {
+    display: flex;
+}
+
+.footer__action {
+    margin-right: 24px;
+    padding-bottom: 4px;
+}
+
+.footer__vali {
+    border-bottom: 1px solid rgba($color--white, .1);
+    margin: 40px 0;
+
+    @include minwidth($tablet) {
+        margin: 40px 0 16px;
+    }
+}
+
+.footer__navbox {
     align-items: center;
     display: flex;
     justify-content: space-between;

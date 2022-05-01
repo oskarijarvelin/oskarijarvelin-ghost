@@ -65,8 +65,63 @@
 
     <footer id="footer" class="footer">
         <div class="footer__wrapper">
-            <div class="footer__copyright">&copy; 2012 - {{date format="YYYY"}}: <a href="{{@site.url}}">{{@site.title}}</a></div>
-            <nav class="footer__nav">{{navigation type="secondary"}}</nav>
+            <div class="footer__flexbox">
+
+                <div class="footer__column">
+                    <h2 class="footer__title">
+                        {{#if @custom.title_h1}}
+                            {{@custom.title_h1}}
+                        {{/if}}
+                    </h2>
+                    {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+                        <ul class="footer__list">
+                            {{#foreach tags}}
+                                <li class="footer__list-item">
+                                    <a href='{{ url }}'>{{ name }}</a>
+                                </li>
+                            {{/foreach}}
+                        </ul>
+                    {{/get}}
+                    {{#if @custom.email_signup_text}}
+                        {{#unless @member}}
+                            {{#if @custom.email_signup_text}}<h3 class="h6 footer__cta-title">{{@custom.email_signup_text}}</h3>{{/if}}
+                            <a class="footer__cta-link" href="#/portal" data-portal>
+                                <div class="footer__cta-input">{{@custom.email_signup_placeholder}}</div>
+                                <span class="footer__cta-button">{{@custom.email_signup_button}}</span>
+                            </a>
+                        {{/unless}}
+                    {{/if}}
+                </div>
+
+                <div class="footer__column">
+                    <h2 class="footer__title">Yhteystiedot</h2>
+                    <p>
+                        <span class="oskari">Oskari Järvelin</span><br>
+                        <b style="display:inline-block;min-width:100px;">Y-Tunnus:</b> 3284249-9
+                    </p>
+                    <p>
+                        <b style="display:inline-block;min-width:100px;">Puhelin:</b> <a href="tel:+358458983883">045 898 3883</a><br>
+                        <b style="display:inline-block;min-width:100px;">Sähköposti:</b> <a href="mailto:contact@oskarijarvelin.fi">contact@oskarijarvelin.fi</a>
+                    </p>
+                    <div class="footer__actions">
+                        {{#if @custom.linkedin}}
+                            <a class="footer__action" href="{{@custom.linkedin}}" title="LinkedIn" target="_blank" rel="noopener">{{> "icons/linkedin"}}</a>
+                        {{/if}}
+
+                        {{#if @custom.github}}
+                            <a class="footer__action" href="{{@custom.github}}" title="GitHub" target="_blank" rel="noopener">{{> "icons/github"}}</a>
+                        {{/if}}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer__vali"></div>
+        <div class="footer__wrapper">
+            <div class="footer__navbox">
+                <div class="footer__copyright">&copy; 2012 - {{date format="YYYY"}}: <a href="{{@site.url}}">{{@site.title}}</a></div>
+                <nav class="footer__nav">{{navigation type="secondary"}}</nav>
+            </div>
         </div>
     </footer>
 
