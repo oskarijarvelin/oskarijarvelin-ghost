@@ -97,7 +97,7 @@
                 <div class="footer__column">
                     <h2 class="footer__title">Yhteystiedot</h2>
                     <p>
-                        <span class="oskari">Oskari Järvelin</span><br>
+                        <span class="oskari">{{@site.title}}</span><br>
                         <b style="display:inline-block;min-width:100px;">Y-Tunnus:</b> 3284249-9
                     </p>
                     <p>
@@ -120,7 +120,7 @@
         <div class="footer__vali"></div>
         <div class="footer__wrapper">
             <div class="footer__navbox">
-                <div class="footer__copyright">&copy; 2012 - {{date format="YYYY"}}: <a href="{{@site.url}}">{{@site.title}}</a></div>
+                <div class="footer__copyright">&copy; 2012 - {{date format="YYYY"}}: <a href="{{@site.url}}"><span class="oskari">{{@site.title}}</span></a></div>
                 <nav class="footer__nav">{{navigation type="secondary"}}</nav>
             </div>
         </div>
