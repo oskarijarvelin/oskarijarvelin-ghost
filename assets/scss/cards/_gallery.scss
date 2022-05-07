@@ -30,3 +30,12 @@
         width: 100%;
     }
 }
+
+.lg-backdrop.in {
+    opacity: .85 !important;
+}
+
+.lg-outer {
+    top: 64px !important;
+    height: calc(100% - 64px) !important;
+}
